@@ -26,5 +26,5 @@ class ScoreViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
-    queryset = Scores.objects.all()
+    queryset = Scores.objects.all().order_by('-score')[:5]
     serializer_class = ScoreSerializer
